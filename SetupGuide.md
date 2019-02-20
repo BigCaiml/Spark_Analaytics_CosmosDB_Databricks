@@ -1,7 +1,7 @@
 
 ![Adventurework logo](/images/AdventureWorks_logo.png)
 
-##Operationalizing Analytics with Databricks & CosmosDB
+## Operationalizing Analytics with Databricks & CosmosDB
 
 ### Environment Setup Guide
 
@@ -11,12 +11,12 @@ Before we can begin scoring customer profiles for propensity to buy bicycles, we
 
 **NOTE:** Guidance in this document will be provided at a high-level, assuming you have basic familiarity with the Azure portal and the provisioning of commonly used Azure resources. Where not otherwise specified, accept default settings for various services.
 
-####Step 1: Create a Resource Group
+#### Step 1: Create a Resource Group
 
 1. Login to the Azure Portal
 2. Create a new resource group in a region with Azure Databricks services: https://azure.microsoft.com/en-us/global-infrastructure/services/?products=databricks
 
-####Step 2: Create a CosmosDB Account
+#### Step 2: Create a CosmosDB Account
 
 1. From the Azure Portal, create a new CosmosDB account within the resource group created in previous steps.  This account should have the following characteristics:  
 

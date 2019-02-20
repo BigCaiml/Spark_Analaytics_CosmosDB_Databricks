@@ -25,7 +25,7 @@ Before we can begin scoring customer profiles for propensity to buy bicycles, we
 
 **NOTE:** You will return to this account later to create a collection, but internal provisioning of CosmosDB resources takes longer than the Azure Portal makes it appear. Proceeding with other steps will give this time to successfully complete.
 
-####Step 3: Create a Storage Account
+#### Step 3: Create a Storage Account
 
 1.From the Azure Portal, create a new storage account within the resource group created in previous steps. This storage account should have the following characteristics:
         a) Location: same as your resource group
@@ -34,7 +34,7 @@ Before we can begin scoring customer profiles for propensity to buy bicycles, we
         d) Replication: *LRS*
 2. Once created, create a container named datasets under **Blob Services**
 
-####Step 4: Create a Databricks Workspace
+#### Step 4: Create a Databricks Workspace
 
 1. From the Azure Portal, create a new Azure Databricks deployment within the resource group created in previous steps. This deployment should have the following characteristics:
 a. Location: same as your resource group
@@ -42,7 +42,7 @@ b. Pricing Tier: *Standard*
 2. Once created, navigate to the service’s **Overview** page
 3. Click on the **Launch Workspace** button to initialize your Databricks workspace.
 
-####Step 5: Deploy a Databricks Cluster
+#### Step 5: Deploy a Databricks Cluster
 
 1. Navigate to your Azure Databricks workspace
 2. Click on the **Clusters** icon in the left-hand navigation bar
@@ -57,7 +57,7 @@ Accept defaults for all other cluster attributes.
 
 **NOTE:** We are bouncing back and forth between Databricks and the CosmosDB environments to allow time for resources to provision between dependent steps.  Feel free to re-order some of these steps if you wish to focus attention on one resource or the other.
 
-###Step 6: Create a CosmosDB Collection
+#### Step 6: Create a CosmosDB Collection
 
 1. From the Azure Portal, navigate to your CosmosDB account created in previous steps.
 2. From the Overview page on the account, verify the **Status** shows *Online* before proceeding.
@@ -68,7 +68,7 @@ b. Collection ID: *profiles*
 c. Partition Key: */id*
 d. Throughput: *2000*
 
-####Step 7: Import Lab Notebooks to your Databricks Workspace
+#### Step 7: Import Lab Notebooks to your Databricks Workspace
 
 1. From within your Azure Databricks workspace, click on the Workspace icon in the left-hand navigation bar
 2. Navigate to your workspace by clicking on your username and then the workspace panel to its right
@@ -77,7 +77,7 @@ d. Throughput: *2000*
 a. Import From: *URL*
 b. URL: https://sdreadylabs.blob.core.windows.net/da-dt-ts310/DA-DT-TS310.dbc
 
-####Step 8: Configure Data Access Through Databricks
+#### Step 8: Configure Data Access Through Databricks
 
 1. Open the first notebook, DA-DT-TS310/ lab_01_setup_storage.py
 2. Click the drop-down in the upper left-hand corner of the page to attach the notebook to the cluster created in previous steps
@@ -86,7 +86,7 @@ b. URL: https://sdreadylabs.blob.core.windows.net/da-dt-ts310/DA-DT-TS310.dbc
 5. Run the notebook by selecting each code cell in order and clicking Shift-Enter.
 6. Verify the last two cells in the notebook display data from each of the targeted files
 
-####Step 9: Deploy Profiles to CosmosDB Collection
+#### Step 9: Deploy Profiles to CosmosDB Collection
 
 1. To deploy the profiles to CosmosDB, you will first install the Azure Cosmos DB Spark connector library.
 2. Open your browser to https://docs.azuredatabricks.net/spark/latest/data-sources/azure/cosmosdb-connector.html
@@ -118,7 +118,7 @@ d. Locate the **URI** and **Primary Key** or **Secondary Key** values on this pa
 24. Run the notebook but selecting each code cell in order and clicking Shift-Enter.
 25. When the notebook has been completed, the bottom cell of the notebook will verify the count of profile documents now loaded to your CosmosDB collection. It should read **18,484**.
 
-####Step 10: Add MMLSpark library to Databricks Cluster
+#### Step 10: Add MMLSpark library to Databricks Cluster
 
 The [Microsoft Machine Learning for Apache Spark](https://github.com/Azure/mmlspark/) library is used for building the bike purchase propensity model.
 
@@ -130,7 +130,7 @@ The [Microsoft Machine Learning for Apache Spark](https://github.com/Azure/mmlsp
 6. In the resulting page, select the **Install automatically on all clusters** checkbox and **Confirm**
 7. Wait for the **Status** for your cluster to go from *Installing* to *Installed*. No cluster restart is required.
 
-####Step 11: Execute Lab Notebooks
+#### Step 11: Execute Lab Notebooks
 
 Open and step through the remaining notebooks in order to complete the lab:
 - lab_03_train_model.py – train and persist a machine learning model to predict bike purchase

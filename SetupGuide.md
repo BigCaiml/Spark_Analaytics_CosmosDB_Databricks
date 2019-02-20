@@ -28,10 +28,10 @@ Before we can begin scoring customer profiles for propensity to buy bicycles, we
 #### Step 3: Create a Storage Account
 
 1.From the Azure Portal, create a new storage account within the resource group created in previous steps. This storage account should have the following characteristics:
-        a) Location: same as your resource group
-        b) Performance: *Standard*
-        c) Account Kind: *StorageV2*
-        d) Replication: *LRS*
+        a. Location: same as your resource group  
+        b. Performance: *Standard*  
+        c. Account Kind: *StorageV2*  
+        d. Replication: *LRS*  
 2. Once created, create a container named datasets under **Blob Services**
 
 #### Step 4: Create a Databricks Workspace

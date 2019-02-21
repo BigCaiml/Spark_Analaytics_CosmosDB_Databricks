@@ -20,25 +20,25 @@ Before we can begin scoring customer profiles for propensity to buy bicycles, we
 
 1. From the Azure Portal, create a new CosmosDB account within the resource group created in previous steps.  This account should have the following characteristics:  
 
-    a. Location: same as your resource group
-    b. API: *Core (SQL)*  
+    1. Location: same as your resource group
+    2. API: *Core (SQL)*  
 
 **NOTE:** You will return to this account later to create a collection, but internal provisioning of CosmosDB resources takes longer than the Azure Portal makes it appear. Proceeding with other steps will give this time to successfully complete.
 
 #### Step 3: Create a Storage Account
 
-1.From the Azure Portal, create a new storage account within the resource group created in previous steps. This storage account should have the following characteristics:
-        a. Location: same as your resource group  
-        b. Performance: *Standard*  
-        c. Account Kind: *StorageV2*  
-        d. Replication: *LRS*  
+1. From the Azure Portal, create a new storage account within the resource group created in previous steps. This storage account should have the following characteristics:
+    1. Location: same as your resource group  
+    2. Performance: *Standard*  
+    3. Account Kind: *StorageV2*  
+    4. Replication: *LRS*  
 2. Once created, create a container named datasets under **Blob Services**
 
 #### Step 4: Create a Databricks Workspace
 
 1. From the Azure Portal, create a new Azure Databricks deployment within the resource group created in previous steps. This deployment should have the following characteristics:
-a. Location: same as your resource group
-b. Pricing Tier: *Standard*
+    1. Location: same as your resource group
+    2. Pricing Tier: *Standard*
 2. Once created, navigate to the service’s **Overview** page
 3. Click on the **Launch Workspace** button to initialize your Databricks workspace.
 
@@ -48,10 +48,10 @@ b. Pricing Tier: *Standard*
 2. Click on the **Clusters** icon in the left-hand navigation bar
 3. Click on the **+ Create Cluster** button to create a new *Interactive Cluster*
 4. Configure your cluster to have the following characteristics:
-a. Cluster Mode: *Standard*
-b. Python Version: *3*
-c. Enable Autoscaling: *Deselect*
-d. Workers: *4*
+    1. Cluster Mode: *Standard*
+    2. Python Version: *3*
+    3. Enable Autoscaling: *Deselect*
+    4. Workers: *4*
 Accept defaults for all other cluster attributes.
 5. Click on the **Create Cluster** button to launch this cluster
 
@@ -63,10 +63,10 @@ Accept defaults for all other cluster attributes.
 2. From the Overview page on the account, verify the **Status** shows *Online* before proceeding.
 3. Click on the **+ Add Collection** item at the top of the Overview page
 4. Add a collection with the following characteristics:
-a. Database ID: Select **Create New** with a database id of *app*
-b. Collection ID: *profiles*
-c. Partition Key: */id*
-d. Throughput: *2000*
+    1. Database ID: Select **Create New** with a database id of *app*
+    2. Collection ID: *profiles*
+    3. Partition Key: */id*
+    4. Throughput: *2000*
 
 #### Step 7: Import Lab Notebooks to your Databricks Workspace
 
@@ -74,8 +74,8 @@ d. Throughput: *2000*
 2. Navigate to your workspace by clicking on your username and then the workspace panel to its right
 3. Right-click the background of the workspace panel and select Import
 4. On the resulting Import Notebooks dialog, enter the following:
-a. Import From: *URL*
-b. URL: https://sdreadylabs.blob.core.windows.net/da-dt-ts310/DA-DT-TS310.dbc
+    1. Import From: *URL*
+    2. URL: https://sdreadylabs.blob.core.windows.net/da-dt-ts310/DA-DT-TS310.dbc
 
 #### Step 8: Configure Data Access Through Databricks
 
@@ -110,10 +110,10 @@ b. URL: https://sdreadylabs.blob.core.windows.net/da-dt-ts310/DA-DT-TS310.dbc
 20. Right-click the background of the workspace panel and select **Import**
 21. Click the drop-down in the upper left-hand corner of the page to attach the notebook to the cluster created in previous steps
 22. Copy and paste the URI and read-write key (accessible through the Azure Portal) for your CosmosDB account into the indicated portions of the notebook script. If you are unfamiliar with how to access these values, follow these steps:
-a. From the Azure Portal, access your CosmosDB account
-b. From the **Settings** menu in the left-hand side of the page, select **Keys**
-c. Verify you are on the **Read-write Keys** tab
-d. Locate the **URI** and **Primary Key** or **Secondary Key** values on this page
+    1. From the Azure Portal, access your CosmosDB account
+    2. From the **Settings** menu in the left-hand side of the page, select **Keys**
+    3. Verify you are on the **Read-write Keys** tab
+    4. Locate the **URI** and **Primary Key** or **Secondary Key** values on this page
 23. Verify the cluster associated with the workbook is ready to execute scripts (as indicated by the solid green icon associated with the cluster in the upper left-hand corner of the page)
 24. Run the notebook but selecting each code cell in order and clicking Shift-Enter.
 25. When the notebook has been completed, the bottom cell of the notebook will verify the count of profile documents now loaded to your CosmosDB collection. It should read **18,484**.

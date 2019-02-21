@@ -17,12 +17,17 @@ try:
 except:
   pass
 
-# copy data files from a publically accesible storage account into your storage account
-try: 
-  dbutils.fs.cp('wasbs://da-dt-ts310@sdreadylabs.blob.core.windows.net/datasets/history.txt', 'dbfs:/mnt/datasets/training/purchases.txt')
-  dbutils.fs.cp('wasbs://da-dt-ts310@sdreadylabs.blob.core.windows.net/datasets/profiles.txt', 'dbfs:/mnt/datasets/profiles/profiles.txt')
-except:
-  pass
+# COMMAND ----------
+
+# MAGIC %md Download data files from the github repository into your mounted storage account.
+
+# COMMAND ----------
+
+# MAGIC %sh wget -O /dbfs/mnt/datasets/training/purchases.txt 'https://github.com/BigCaiml/Spark_Analytics_CosmosDB_Databricks/raw/master/datasets/history.txt'
+
+# COMMAND ----------
+
+# MAGIC %sh wget -O /dbfs/mnt/datasets/profiles/profiles.txt 'https://github.com/BigCaiml/Spark_Analytics_CosmosDB_Databricks/raw/master/datasets/profiles.txt' 
 
 # COMMAND ----------
 

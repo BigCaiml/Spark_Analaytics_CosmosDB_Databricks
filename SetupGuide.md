@@ -75,11 +75,11 @@ Accept defaults for all other cluster attributes.
 3. Right-click the background of the workspace panel and select Import
 4. On the resulting Import Notebooks dialog, enter the following:
     1. Import From: *URL*
-    2. URL: https://sdreadylabs.blob.core.windows.net/da-dt-ts310/DA-DT-TS310.dbc
+    2. URL: https://raw.githubusercontent.com/BigCaiml/Spark_Analytics_CosmosDB_Databricks/master/notebooks/DA-DP-TS310.dbc
 
 #### Step 8: Configure Data Access Through Databricks
 
-1. Open the first notebook, DA-DT-TS310/ lab_01_setup_storage.py
+1. Open the first notebook, *DA-DP-TS310/lab_01_setup_storage.py*
 2. Click the drop-down in the upper left-hand corner of the page to attach the notebook to the cluster created in previous steps
 3. Copy and paste your Azure Storage Account name and an associated key (accessible through the Azure Portal) into the indicated portions of the notebook script
 4. Verify the cluster associated with the workbook is ready to execute scripts (as indicated by the solid green icon associated with the cluster in the upper left-hand corner of the page)
